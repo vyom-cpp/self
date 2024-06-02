@@ -1,5 +1,6 @@
-// src/components/Navbar.js
-import React, { useState } from 'react';
+// When the page is refreshed, Home Page should be there
+
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faLightbulb, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +8,15 @@ import './css/Navbar.css';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -18,10 +27,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${menuOpen ? 'active' : ''} ${darkMode ? 'dark-mode' : ''}`}>
-      <div className="brand">
-        <FontAwesomeIcon icon={darkMode ? faMoon : faLightbulb} onClick={toggleDarkMode} />
-        <Link to="/">Ephemeral</Link>
+    <nav className={`navbar ${menuOpen ? 'active' : ''}`}>
+      <div className="nav-left">
+        <div className="menu-icon" onClick={toggleMenu}>
+          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+        </div>
+        <FontAwesomeIcon 
+          icon={darkMode ? faMoon : faLightbulb} 
+          onClick={toggleDarkMode} 
+          className="mode-icon" 
+        />
       </div>
       <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
         <li className="nav-item">
@@ -40,9 +55,6 @@ const Navbar = () => {
           <Link to="/contact" onClick={toggleMenu}>Contact</Link>
         </li>
       </ul>
-      <div className="menu-icon" onClick={toggleMenu}>
-        <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
-      </div>
     </nav>
   );
 };

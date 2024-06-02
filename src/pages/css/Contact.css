@@ -1,52 +1,107 @@
 /* src/pages/Contact.css */
 .contact-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: #121212; /* Background color of the page */
-  color: #fff; /* Text color */
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.contact-container h1 {
-  font-size: 2rem;
+.contact-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode .contact-box {
+  background: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+body.dark-mode .contact-box {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.contact-box h1 {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.contact-container p {
+.contact-box p {
+  font-size: 1.25rem;
   margin-bottom: 2rem;
 }
 
-.contact-form {
+.contact-box input[type="email"],
+.contact-box input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+body.light-mode .contact-box input[type="email"],
+body.light-mode .contact-box input[type="password"] {
+  background: rgba(0, 0, 0, 0.3);
+  color: #000;
+}
+
+.contact-box input[type="email"]::placeholder,
+.contact-box input[type="password"]::placeholder {
+  color: #ddd;
+}
+
+body.light-mode .contact-box input[type="email"]::placeholder,
+body.light-mode .contact-box input[type="password"]::placeholder {
+  color: #555;
+}
+
+.contact-box .terms {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-  width: 80%;
-  max-width: 400px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #333;
-  color: #fff;
+.contact-box .terms input {
+  margin-right: 0.5rem;
 }
 
-.contact-form button {
-  padding: 10px 20px;
+.contact-box .terms span {
+  color: #aaa;
+}
+
+.contact-box button {
+  width: 100%;
+  padding: 0.75rem;
   border: none;
-  border-radius: 4px;
-  background-color: #555;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
   color: #fff;
+  font-size: 1.25rem;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-.contact-form button:hover {
-  background-color: #777;
+.contact-box button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+body.light-mode .contact-box button {
+  background: rgba(0, 0, 0, 0.3);
+  color: #000;
+}
+
+body.light-mode .contact-box button:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
