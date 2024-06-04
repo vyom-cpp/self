@@ -88,12 +88,12 @@ body {
 /* Light Mode Styles */
 body.light-mode .home-container {
   background-color: #fff;
-  color: #333;
+  color: #000;
 }
 
 body.light-mode .left-section {
-  background: #ffe4e1;
-  color: #333;
+  background: #fff;
+  color: #000;
 }
 
 body.light-mode .right-section img {
@@ -107,7 +107,7 @@ body.dark-mode .home-container {
 }
 
 body.dark-mode .left-section {
-  background: #3b3b98;
+  background: #000;
   color: #fff;
 }
 

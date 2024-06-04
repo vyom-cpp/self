@@ -1,7 +1,6 @@
-// src/pages/Home.js
 import React, { useState, useEffect, useMemo } from 'react';
 import './css/Home.css';
-import myImage from '../assets/man.jpg'; // Import your image
+import myImage from '../assets/man.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
