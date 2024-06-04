@@ -1,6 +1,8 @@
-/* src/pages/css/Gallery.css */
+body {
+  font-family: "Merriweather", serif;
+}
+
 .container {
   padding: 20px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
 }

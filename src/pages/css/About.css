@@ -1,6 +1,90 @@
-/* src/pages/css/About.css */
-.container {
+body {
+  font-family: "Merriweather", serif;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   padding: 20px;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Styles */
+body.light-mode .about-container {
+  background-color: #fff;
+  color: #333;
+}
+
+body.light-mode .about-card {
+  background: #ffe4e1;
+  color: #333;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .about-description {
+  background: #ffebcd;
+  color: #333;
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode .about-container {
+  background-color: #000;
+  color: #ddd;
+}
+
+body.dark-mode .about-card {
+  background: #3b3b98;
+  color: #fff;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .about-description {
+  background: #4b4b7f;
+  color: #fff;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-right: 2px solid #ccc;
+}
+
+.about-description {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.about-description h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-description p {
+  font-size: 2rem;
+  line-height: 1.5;
 }
