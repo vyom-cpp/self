@@ -1,8 +1,85 @@
-body {
+:root {
+  --background-color-light: #ffffff;
+  --background-color-dark: #000000;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+  --border-color: #007bff;
+  --overlay-background: rgba(0, 0, 0, 0.5);
+  --overlay-text-color: #ffffff;
+}
+
+body.light-mode {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+body.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
   font-family: "Merriweather", serif;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
 .container {
-  padding: 20px;
   text-align: center;
+  padding: 20px;
+  max-width: 100vw;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  position: relative;
+  width: calc(33.33% - 20px);
+  min-width: 300px;
+  height: auto;
+  border: 2px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--border-color);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--overlay-background);
+  color: var(--overlay-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.project-name {
+  font-size: 1.2em;
+  font-weight: bold;
 }
